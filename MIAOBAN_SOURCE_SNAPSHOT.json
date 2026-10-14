@@ -1,0 +1,10 @@
+{
+  "source": "https://github.com/78/xiaozhi-esp32",
+  "branch": "main",
+  "source_commit": "e076ac496e2d93dc3a2308a0491d745afe9489ab",
+  "source_commit_date": "2026-10-12T17:03:24Z",
+  "archive_url": "https://codeload.github.com/78/xiaozhi-esp32/zip/e076ac496e2d93dc3a2308a0491d745afe9489ab",
+  "archive_sha256": "F63054858AA847BBB070E6AAE020A043EF5EA7D8ECC7A057393FEA29C5596D2C",
+  "import_type": "source snapshot; upstream Git history not imported",
+  "collected_date": "2026-10-14"
+}
