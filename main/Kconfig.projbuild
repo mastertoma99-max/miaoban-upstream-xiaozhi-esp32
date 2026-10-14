@@ -1,5 +1,26 @@
 menu "Xiaozhi Assistant"
 
+config MIAOBAN_THREAD_BR
+    bool "ESP-VoCat S3 + H2 Thread border router"
+    depends on BOARD_TYPE_ESP_VOCAT && IDF_TARGET_ESP32S3
+    depends on OPENTHREAD_BORDER_ROUTER && OPENTHREAD_RADIO_SPINEL_UART
+    default n
+    help
+        Run the OpenThread host and border router alongside the voice assistant.
+        Requires a separate H2 running UART RCP firmware and the ot_nvs partition.
+
+config MIAOBAN_THREAD_TX_GPIO
+    int "Thread RCP UART2 TX GPIO"
+    depends on MIAOBAN_THREAD_BR
+    range 0 48
+    default 8
+
+config MIAOBAN_THREAD_RX_GPIO
+    int "Thread RCP UART2 RX GPIO"
+    depends on MIAOBAN_THREAD_BR
+    range 0 48
+    default 21
+
 config OTA_URL
     string "Default OTA URL"
     default "https://api.tenclass.net/xiaozhi/ota/"

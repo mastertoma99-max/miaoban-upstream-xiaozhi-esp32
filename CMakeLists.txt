@@ -2,6 +2,12 @@
 # CMakeLists in this exact order for cmake to work correctly
 cmake_minimum_required(VERSION 3.16)
 
+# This multi-board application can exceed Windows' process command-line limit.
+# Pass compiler/linker arguments through response files when using Ninja there.
+if(CMAKE_HOST_WIN32)
+    set(CMAKE_NINJA_FORCE_RESPONSE_FILE ON CACHE BOOL "Use Ninja response files" FORCE)
+endif()
+
 # Add this line to disable the specific warning
 add_compile_options(-Wno-missing-field-initializers)
 

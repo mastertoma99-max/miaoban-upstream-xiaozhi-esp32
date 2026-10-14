@@ -125,6 +125,7 @@ void WifiBoard::OnNetworkEvent(NetworkEvent event, const std::string& data) {
 #endif
             in_config_mode_ = false;
             ESP_LOGI(TAG, "Connected to WiFi: %s", data.c_str());
+            OnWifiStationConnected();
             break;
         case NetworkEvent::Scanning:
             ESP_LOGI(TAG, "WiFi scanning");
@@ -163,11 +164,19 @@ void WifiBoard::OnWifiConnectTimeout(void* arg) {
     auto* board = static_cast<WifiBoard*>(arg);
     ESP_LOGW(TAG, "WiFi connection timeout, entering config mode");
 
+    if (!board->PrepareForWifiStationStop()) {
+        ESP_LOGE(TAG, "Network service is still stopping; retry WiFi configuration");
+        return;
+    }
     WifiManager::GetInstance().StopStation();
     board->StartWifiConfigMode();
 }
 
 void WifiBoard::StartWifiConfigMode() {
+    if (!PrepareForWifiStationStop()) {
+        ESP_LOGE(TAG, "Network service is still stopping; retry WiFi configuration");
+        return;
+    }
     in_config_mode_ = true;
     // Transition to wifi configuring state
     Application::GetInstance().SetDeviceState(kDeviceStateWifiConfiguring);
@@ -212,6 +221,11 @@ void WifiBoard::EnterWifiConfigMode() {
 
             // Stop any ongoing connection attempt
             esp_timer_stop(board->connect_timer_);
+            if (!board->PrepareForWifiStationStop()) {
+                ESP_LOGE(TAG, "Network service is still stopping; retry WiFi configuration");
+                vTaskDelete(NULL);
+                return;
+            }
             WifiManager::GetInstance().StopStation();
 
             // Enter config mode
@@ -229,6 +243,10 @@ void WifiBoard::EnterWifiConfigMode() {
 
     // Stop any ongoing connection attempt
     esp_timer_stop(connect_timer_);
+    if (!PrepareForWifiStationStop()) {
+        ESP_LOGE(TAG, "Network service is still stopping; retry WiFi configuration");
+        return;
+    }
     WifiManager::GetInstance().StopStation();
 
     StartWifiConfigMode();

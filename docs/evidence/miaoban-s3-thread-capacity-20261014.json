@@ -1,0 +1,284 @@
+{
+  "date": "2026-10-14",
+  "sdk_commit": "fff9895c82d744c7237be8847347bdd1b07c6643",
+  "host_profile": "ESP32-S3-WROOM-1-N16R8 with ESP32-H2 UART RCP",
+  "flash_bytes": 16777216,
+  "physical_psram_expected_bytes": 8388608,
+  "ota_slot_bytes": 4128768,
+  "assets_partition_bytes": 8388608,
+  "thread_nvs_bytes": 65536,
+  "baseline": {
+    "app_bin_bytes": 2554912,
+    "app_sha256": "ebe4cbbf8eba255448aa29e58e23bb191e6910d1006689a647ebd661fbd0a3cc",
+    "assets_bytes": 2968883,
+    "assets_sha256": "d5a8e7d5747cdd7a8e5307d6162bb87dce6de76cd5a7477bf7f55ea555569918",
+    "linker_summary": {
+      "version": "1.2",
+      "total_size": 2554802,
+      "layout": [
+        {
+          "name": "Flash Code",
+          "total": 0,
+          "used": 1750212,
+          "free": 0,
+          "parts": {
+            ".text": {
+              "size": 1750212
+            }
+          }
+        },
+        {
+          "name": "Flash Data",
+          "total": 0,
+          "used": 684220,
+          "free": 0,
+          "parts": {
+            ".rodata": {
+              "size": 683936
+            },
+            ".appdesc": {
+              "size": 256
+            },
+            ".tdata": {
+              "size": 28
+            }
+          }
+        },
+        {
+          "name": "DIRAM",
+          "total": 341760,
+          "used": 151278,
+          "free": 190482,
+          "parts": {
+            ".text": {
+              "size": 83791
+            },
+            ".data": {
+              "size": 35515
+            },
+            ".bss": {
+              "size": 30944
+            },
+            ".vectors": {
+              "size": 1028
+            }
+          }
+        },
+        {
+          "name": "RTC SLOW",
+          "total": 8192,
+          "used": 44,
+          "free": 8148,
+          "parts": {
+            ".force_slow": {
+              "size": 36
+            },
+            ".rtc_noinit": {
+              "size": 8
+            }
+          }
+        },
+        {
+          "name": "RTC FAST",
+          "total": 8192,
+          "used": 40,
+          "free": 8152,
+          "parts": {
+            ".rtc_reserved": {
+              "size": 40
+            }
+          }
+        }
+      ]
+    },
+    "configuration": {
+      "CONFIG_ESPTOOLPY_FLASHSIZE_16MB": "y",
+      "CONFIG_ESPTOOLPY_FLASHSIZE": "\"16MB\"",
+      "CONFIG_USE_EMOTE_MESSAGE_STYLE": "y",
+      "CONFIG_USE_AFE_WAKE_WORD": "y",
+      "CONFIG_USE_AUDIO_PROCESSOR": "y",
+      "CONFIG_USE_DEVICE_AEC": "y",
+      "CONFIG_SR_WN_WN9_NIHAOXIAOZHI_TTS": "y",
+      "CONFIG_SPIRAM_MODE_OCT": "y",
+      "CONFIG_SPIRAM_TYPE_AUTO": "y",
+      "CONFIG_SPIRAM_CLK_IO": "30",
+      "CONFIG_SPIRAM_CS_IO": "26",
+      "CONFIG_SPIRAM_SPEED_80M": "y",
+      "CONFIG_SPIRAM_SPEED": "80",
+      "CONFIG_SPIRAM_BOOT_HW_INIT": "y",
+      "CONFIG_SPIRAM_BOOT_INIT": "y",
+      "CONFIG_SPIRAM_PRE_CONFIGURE_MEMORY_PROTECTION": "y",
+      "CONFIG_SPIRAM_USE_MALLOC": "y",
+      "CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL": "1024",
+      "CONFIG_SPIRAM_MALLOC_RESERVE_INTERNAL": "102400",
+      "CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY": "y"
+    },
+    "ota_slot_free_bytes": 1573856,
+    "fits_ota_slot": true,
+    "fits_assets_partition": true
+  },
+  "combined": {
+    "app_bin_bytes": 2991024,
+    "app_sha256": "170e2c6eba361beb0c4cbe32c8e16b5c8cca5558eccc881c83ebda3438bf6145",
+    "assets_bytes": 2968883,
+    "assets_sha256": "d5a8e7d5747cdd7a8e5307d6162bb87dce6de76cd5a7477bf7f55ea555569918",
+    "linker_summary": {
+      "version": "1.2",
+      "total_size": 2990902,
+      "layout": [
+        {
+          "name": "Flash Code",
+          "total": 0,
+          "used": 2111748,
+          "free": 0,
+          "parts": {
+            ".text": {
+              "size": 2111748
+            }
+          }
+        },
+        {
+          "name": "Flash Data",
+          "total": 0,
+          "used": 754188,
+          "free": 0,
+          "parts": {
+            ".rodata": {
+              "size": 753904
+            },
+            ".appdesc": {
+              "size": 256
+            },
+            ".tdata": {
+              "size": 28
+            }
+          }
+        },
+        {
+          "name": "DIRAM",
+          "total": 341760,
+          "used": 186242,
+          "free": 155518,
+          "parts": {
+            ".text": {
+              "size": 88307
+            },
+            ".bss": {
+              "size": 61312
+            },
+            ".data": {
+              "size": 35595
+            },
+            ".vectors": {
+              "size": 1028
+            }
+          }
+        },
+        {
+          "name": "RTC SLOW",
+          "total": 8192,
+          "used": 44,
+          "free": 8148,
+          "parts": {
+            ".force_slow": {
+              "size": 36
+            },
+            ".rtc_noinit": {
+              "size": 8
+            }
+          }
+        },
+        {
+          "name": "RTC FAST",
+          "total": 8192,
+          "used": 40,
+          "free": 8152,
+          "parts": {
+            ".rtc_reserved": {
+              "size": 40
+            }
+          }
+        }
+      ]
+    },
+    "configuration": {
+      "CONFIG_ESPTOOLPY_FLASHSIZE_16MB": "y",
+      "CONFIG_ESPTOOLPY_FLASHSIZE": "\"16MB\"",
+      "CONFIG_MIAOBAN_THREAD_BR": "y",
+      "CONFIG_MIAOBAN_THREAD_TX_GPIO": "8",
+      "CONFIG_MIAOBAN_THREAD_RX_GPIO": "21",
+      "CONFIG_USE_EMOTE_MESSAGE_STYLE": "y",
+      "CONFIG_USE_AFE_WAKE_WORD": "y",
+      "CONFIG_USE_AUDIO_PROCESSOR": "y",
+      "CONFIG_USE_DEVICE_AEC": "y",
+      "CONFIG_SR_WN_WN9_NIHAOXIAOZHI_TTS": "y",
+      "CONFIG_SPIRAM_MODE_OCT": "y",
+      "CONFIG_SPIRAM_TYPE_AUTO": "y",
+      "CONFIG_SPIRAM_CLK_IO": "30",
+      "CONFIG_SPIRAM_CS_IO": "26",
+      "CONFIG_SPIRAM_SPEED_80M": "y",
+      "CONFIG_SPIRAM_SPEED": "80",
+      "CONFIG_SPIRAM_BOOT_HW_INIT": "y",
+      "CONFIG_SPIRAM_BOOT_INIT": "y",
+      "CONFIG_SPIRAM_PRE_CONFIGURE_MEMORY_PROTECTION": "y",
+      "CONFIG_SPIRAM_USE_MALLOC": "y",
+      "CONFIG_SPIRAM_MALLOC_ALWAYSINTERNAL": "1024",
+      "CONFIG_SPIRAM_MALLOC_RESERVE_INTERNAL": "102400",
+      "CONFIG_OPENTHREAD_ENABLED": "y",
+      "CONFIG_OPENTHREAD_TASK_NAME": "\"ot_main\"",
+      "CONFIG_OPENTHREAD_TASK_SIZE": "8192",
+      "CONFIG_OPENTHREAD_TASK_PRIORITY": "5",
+      "CONFIG_OPENTHREAD_PACKAGE_NAME": "\"openthread-esp32\"",
+      "CONFIG_OPENTHREAD_PLATFORM_INFO": "\"esp32s3\"",
+      "CONFIG_OPENTHREAD_CONSOLE_COMMAND_PREFIX": "\"ot\"",
+      "CONFIG_OPENTHREAD_NETWORK_NAME": "\"OpenThread-ESP\"",
+      "CONFIG_OPENTHREAD_MESH_LOCAL_PREFIX": "\"fd00:db8:a0:0::/64\"",
+      "CONFIG_OPENTHREAD_NETWORK_CHANNEL": "15",
+      "CONFIG_OPENTHREAD_NETWORK_PANID": "0x1234",
+      "CONFIG_OPENTHREAD_NETWORK_EXTPANID": "\"dead00beef00cafe\"",
+      "CONFIG_OPENTHREAD_NETWORK_MASTERKEY": "\"00112233445566778899aabbccddeeff\"",
+      "CONFIG_OPENTHREAD_FTD": "y",
+      "CONFIG_OPENTHREAD_RADIO_SPINEL_UART": "y",
+      "CONFIG_OPENTHREAD_BORDER_ROUTER": "y",
+      "CONFIG_OPENTHREAD_SRP_CLIENT": "y",
+      "CONFIG_OPENTHREAD_SRP_CLIENT_MAX_SERVICES": "5",
+      "CONFIG_OPENTHREAD_DNS_CLIENT": "y",
+      "CONFIG_OPENTHREAD_BORDER_AGENT_ENABLE": "y",
+      "CONFIG_OPENTHREAD_CSL_ACCURACY": "50",
+      "CONFIG_OPENTHREAD_CSL_UNCERTAIN": "50",
+      "CONFIG_OPENTHREAD_RX_ON_WHEN_IDLE": "y",
+      "CONFIG_OPENTHREAD_DIAG": "y",
+      "CONFIG_OPENTHREAD_PARENT_SEARCH_CHECK_INTERVAL_MINS": "9",
+      "CONFIG_OPENTHREAD_PARENT_SEARCH_BACKOFF_INTERVAL_MINS": "600",
+      "CONFIG_OPENTHREAD_PARENT_SEARCH_RSS_THRESHOLD": "-65",
+      "CONFIG_OPENTHREAD_PARENT_SEARCH_RESELECT_TIMEOUT_MINS": "90",
+      "CONFIG_OPENTHREAD_PARENT_SEARCH_RSS_MARGIN": "7",
+      "CONFIG_OPENTHREAD_PLATFORM_MALLOC_CAP_SPIRAM": "y",
+      "CONFIG_OPENTHREAD_PLATFORM_MSGPOOL_MANAGEMENT": "y",
+      "CONFIG_OPENTHREAD_ADDRESS_QUERY_TIMEOUT": "3",
+      "CONFIG_OPENTHREAD_ADDRESS_QUERY_RETRY_DELAY": "15",
+      "CONFIG_OPENTHREAD_ADDRESS_QUERY_MAX_RETRY_DELAY": "120",
+      "CONFIG_OPENTHREAD_PREFERRED_CHANNEL_MASK": "0x7fff800",
+      "CONFIG_OPENTHREAD_SUPPORTED_CHANNEL_MASK": "0x7fff800",
+      "CONFIG_OPENTHREAD_NUM_MESSAGE_BUFFERS": "1024",
+      "CONFIG_OPENTHREAD_XTAL_ACCURACY": "10",
+      "CONFIG_OPENTHREAD_BUS_LATENCY": "4000",
+      "CONFIG_OPENTHREAD_MLE_MAX_CHILDREN": "10",
+      "CONFIG_OPENTHREAD_TMF_ADDR_CACHE_ENTRIES": "20",
+      "CONFIG_OPENTHREAD_UART_BUFFER_SIZE": "2048",
+      "CONFIG_OPENTHREAD_MAC_MAX_CSMA_BACKOFFS_DIRECT": "4",
+      "CONFIG_OPENTHREAD_PLATFORM_NETIF": "y",
+      "CONFIG_OPENTHREAD_LOG_LEVEL_DYNAMIC": "y",
+      "CONFIG_OPENTHREAD_SPINEL_RX_FRAME_BUFFER_SIZE": "2048",
+      "CONFIG_OPENTHREAD_SPINEL_UART_DRIVER_BUFFER_SIZE": "1024",
+      "CONFIG_SPIRAM_ALLOW_STACK_EXTERNAL_MEMORY": "y"
+    },
+    "ota_slot_free_bytes": 1137744,
+    "fits_ota_slot": true,
+    "fits_assets_partition": true
+  },
+  "hardware_flashed": false,
+  "runtime_psram_or_heap_measured": false,
+  "scope": "Current XiaoZhi ESP-VoCat with AFE, WakeNet, device AEC, expression assets; not Brookesia multi-app firmware.",
+  "app_increase_bytes": 436112
+}

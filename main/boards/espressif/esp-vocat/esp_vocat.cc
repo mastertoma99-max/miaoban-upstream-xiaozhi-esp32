@@ -7,6 +7,9 @@
 #include "display/lcd_display.h"
 #include "esp_video.h"
 #include "wifi_board.h"
+#ifdef CONFIG_MIAOBAN_THREAD_BR
+#include "thread_br/thread_br.h"
+#endif
 
 #include <esp_log.h>
 #include <esp_system.h>
@@ -1183,6 +1186,22 @@ public:
         InitializeCamera();
 #endif  // CONFIG_ESP_VIDEO_ENABLE_USB_UVC_VIDEO_DEVICE
     }
+
+#ifdef CONFIG_MIAOBAN_THREAD_BR
+    void OnWifiStationConnected() override {
+        WifiBoard::SetPowerSaveLevel(PowerSaveLevel::PERFORMANCE);
+        StartMiaobanThreadBorderRouter();
+    }
+
+    void SetPowerSaveLevel(PowerSaveLevel) override {
+        // A border router must remain available while the voice UI is idle.
+        WifiBoard::SetPowerSaveLevel(PowerSaveLevel::PERFORMANCE);
+    }
+
+    bool PrepareForWifiStationStop() override {
+        return StopMiaobanThreadBorderRouter();
+    }
+#endif
 
     virtual AudioCodec* GetAudioCodec() override {
         static BoxAudioCodec audio_codec(

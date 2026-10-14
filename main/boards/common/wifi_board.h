@@ -8,6 +8,10 @@
 
 class WifiBoard : public Board {
 protected:
+    // Optional network services must release the STA netif before it is destroyed.
+    virtual bool PrepareForWifiStationStop() { return true; }
+    virtual void OnWifiStationConnected() {}
+
     esp_timer_handle_t connect_timer_ = nullptr;
     bool in_config_mode_ = false;
     NetworkEventCallback network_event_callback_ = nullptr;

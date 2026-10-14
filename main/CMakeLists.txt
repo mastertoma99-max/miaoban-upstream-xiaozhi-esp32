@@ -1094,6 +1094,14 @@ if(CONFIG_IDF_TARGET_ESP32S3)
 endif()
 
 set(MAIN_PRIV_REQUIRES_EXTRA "")
+if(CONFIG_MIAOBAN_THREAD_BR)
+    list(APPEND SOURCES "boards/espressif/esp-vocat/thread_br/thread_br.cc")
+endif()
+# Requirements are expanded before sdkconfig. Keep the S3 SDK dependencies
+# discoverable even when this particular firmware variant leaves Thread disabled.
+if(IDF_TARGET STREQUAL "esp32s3")
+    list(APPEND MAIN_PRIV_REQUIRES_EXTRA openthread espressif__mdns vfs)
+endif()
 if(CONFIG_XIAOZHI_NETWORK_ETHERNET AND CONFIG_XIAOZHI_ETH_PHY_IP101)
     list(APPEND MAIN_PRIV_REQUIRES_EXTRA espressif__ip101)
 endif()
